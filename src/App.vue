@@ -1,32 +1,22 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div class="child-app">
+    <el-menu :router="true" default-active="/" class="child-menu">
+      <el-menu-item index="/">Home</el-menu-item>
+      <el-menu-item index="about">About</el-menu-item>
+    </el-menu>
     <router-view />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style scoped>
+.child-app {
+  width: 400px;
+  display: flex;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 10px;
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.child-menu {
+  margin-right: 20px;
 }
 </style>
